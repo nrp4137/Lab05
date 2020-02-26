@@ -50,13 +50,17 @@ public class Jukebox {
         this.song_list = map;
     }
 
+    /**
+     * Runs the simulation 50000 times and each simulation stops when the same song is played
+     * @param seed1 the seed from the param line
+     */
     public void run_simulation(int seed1) {
         Random rnd = new Random(seed1);
         int i;
         int counter = 0;
 
         Set<Song> new_set = song_list.keySet();
-        
+
         long start_time = System.currentTimeMillis();
         for (i = 0; i < 50000; i++) {
             HashSet<Song> already_played = new HashSet<>();
@@ -77,12 +81,18 @@ public class Jukebox {
 
     }
 
+    /**
+     * generates stats and sets them equal to fields
+     */
     public void generate_stats() {
         this.average = total / 50000;
         this.size = song_list.size();
 
     }
 
+    /**
+     * Prints out the fields in a nice format
+     */
     public void print_stats() {
         System.out.println("Jukebox of " + size + " songs");
         System.out.println("Simulation took " + time + " seconds");
