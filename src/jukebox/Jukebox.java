@@ -15,7 +15,11 @@ public class Jukebox {
     private int average;
     private long time;
 
-
+    /**
+     * makes a jukebox instance and then runs the simulation and prints out the statistics
+     * @param args takes two args from command line, filename, and seed
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
         Jukebox juke = new Jukebox(args[0]);
         String param1 = args[1];
